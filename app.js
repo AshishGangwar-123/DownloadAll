@@ -39,7 +39,7 @@ async function handleFormSubmit(event) {
 
     try {
         // Send a POST request to the local backend API
-        const response = await fetch("http://127.0.0.1:8000/download", {
+        const response = await fetch("/download", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -122,7 +122,7 @@ async function fetchVideoSizes() {
 
     try {
         // Fetch format details from backend "/info" endpoint
-        const response = await fetch("http://127.0.0.1:8000/info", {
+        const response = await fetch("/info", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

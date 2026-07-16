@@ -129,3 +129,36 @@ def handle_download(url: URL, background_tasks: BackgroundTasks):
          filename=os.path.basename(filename),
          media_type="application/octet-stream"
      )
+
+# Serve Frontend Static Files
+@app.get("/")
+def serve_index():
+    return FileResponse("index.html")
+
+@app.get("/app.js")
+def serve_js():
+    return FileResponse("app.js")
+
+@app.get("/style.css")
+def serve_css():
+    return FileResponse("style.css")
+
+@app.get("/manifest.json")
+def serve_manifest():
+    return FileResponse("manifest.json")
+
+@app.get("/sw.js")
+def serve_sw():
+    return FileResponse("sw.js")
+
+@app.get("/favicon.ico")
+def serve_favicon():
+    return FileResponse("favicon.ico")
+
+@app.get("/icon-192.png")
+def serve_icon192():
+    return FileResponse("icon-192.png")
+
+@app.get("/icon-512.png")
+def serve_icon512():
+    return FileResponse("icon-512.png")
